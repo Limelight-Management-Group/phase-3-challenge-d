@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hotel</title>
+
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="flex flex-column">
+    <header class="site-header flex flex-row-between">
+      <h1>Hotel</h1>
+    </header>
+    <div class="modal-overlay"></div>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-close"> X </div>
+
+          <div class="modal-title"> Booking </div>
+        </div>
+        <br><br>
+        <table class="table table-hover pushTop80">
+          <thead class="thead-inverse">
+            <tr>
+              <!-- <th>Qty</th> -->
+              <th class="modal-item-pos" id="price"></th>
+                <th class="modal-item-pos" id="name"></th>
+                <td class="roomOutput"></td>
+                <td class="priceOutput"></td>
+                <input type="hidden" name="fields[YOUR_FORM_FIELD]" value="your value" />
+                <input type="number" class="daysStayed" name="daysStayed" value="1" />
+
+              <!-- <th class="text-xs-right">Subtotal</th> -->
+
+            </tr>
+          </thead>
+        </table>
+        <div class="modal-item-row">
+        <!-- items will go here -->
+        </div>
+        <div class="modal-footer pushTop120">
+          <button class="modal-clear">Clear</button>
+          <div class="modal-section-total">
+          <button id="update" class="updateTotal">Update Total</button>
+            <span class="modal-section-title"> Total </span>
+            <span class="modal-section-amount">  </span>
+            <button>Confirm</button>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Rooms</h1>
+      <table class="room-list flex flex-row-between">
+        <thead>
+          <th>Room #</th>
+          <th>Capacity</th>
+          <th>Rate / Night</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr class="button-data" id="room2B">
+            <td>2B</td>
+            <td>4</td>
+            <td class="price">$59.99</td>
+            <td><button id="2b" class="cart-button">Book</button></td>
+          </tr>
+          <tr class="button-data" id="room2A">
+            <td>2A</td>
+            <td>4</td>
+            <td class="price">$59.99</td>
+            <td><button id="2a" class="cart-button">Book</button></td>
+          </tr>
+          <tr class="button-data" id="room3A">
+            <td>3A</td>
+            <td>2</td>
+            <td class="price">$45.00</td>
+            <td><button id="3a" class="cart-button">Book</button></td>
+          </tr>
+          <tr class="button-data" id="room3B">
+            <td>3B</td>
+            <td>2</td>
+            <td class="price">$45.00</td>
+            <td><button id="3b" class="cart-button">Book</button></td>
+          </tr>
+          <tr class="button-data" id="room3C">
+            <td>3C</td>
+            <td>3</td>
+            <td class="price">$52.64</td>
+            <td><button id="3c" class="cart-button">Book</button></td>
+          </tr>
+          <tr class="button-data" id="room4A">
+            <td>4A</td>
+            <td>4</td>
+            <td class="price">$59.99</td>
+            <td><button id="4a" class="cart-button">Book</button></td>
+          </tr>
+          <tr class="button-data" id="room4B">
+            <td>4B</td>
+            <td>4</td>
+            <td class="price">$59.99</td>
+            <td><button id="4b" class="cart-button">Book</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script src='./script.js'></script>
+</html>
