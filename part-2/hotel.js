@@ -117,7 +117,7 @@ let getAllBookingPerRoom = () => {
     })
     .then( ()=> console.log( `|-----------------------------------------------------+-----------------------------------------------------------------------|` ) )
 }
-let getAllBookings = () => {
+let getTotalBookings = () => {
   let roomNumberLength = `room_number`.length
   let guestNameLength = `name                     `.length
   let check_inLength =  `check_in      `.length
@@ -161,7 +161,7 @@ switch (func) {
     break;
   case "bookedRooms": getAllBookingPerRoom(argument)
     break;
-  case "bookings": getAllBookings()
+  case "bookings": getTotalBookings()
     break;
   default:
 
