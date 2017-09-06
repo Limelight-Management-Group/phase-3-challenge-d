@@ -86,7 +86,7 @@ let getAvailableRooms = () => {
 }
 
 
-let getAllBookedRooms = () => {
+let getAllBookingPerRoom = () => {
   let roomNumberLength = `room_number`.length
   let guestNameLength = `name                     `.length
   let check_inLength =  `check_in      `.length
@@ -95,6 +95,37 @@ let getAllBookedRooms = () => {
   console.log(`| room_number |          name             |                check_in                  |                check_out               |`)
   console.log(`|---------------------------------------------------------+-------------------------------------------------------------------|`)
   let list = query.getAllBookingsByRoomNumber('3C')           
+    .then( items => {
+      // console.log(items)
+      items.map( item => {
+        // console.log('item', item)
+        console.log("| " +
+          (" ").repeat( roomNumberLength - item.room_number.length) +
+          item.room_number +
+           " | " +
+          item.name +
+          (" ").repeat( guestNameLength - item.name.length) +
+           " | " +
+          item.check_in +
+          (" ").repeat(check_inLength - item.check_in.length) + 
+          " | " +
+          item.check_out +
+          (" ").repeat(check_outLength - item.check_out.length) + 
+          " | "
+          )
+      })
+    })
+    .then( ()=> console.log( `|-----------------------------------------------------+-----------------------------------------------------------------------|` ) )
+}
+let getAllBookings = () => {
+  let roomNumberLength = `room_number`.length
+  let guestNameLength = `name                     `.length
+  let check_inLength =  `check_in      `.length
+  let check_outLength = `check_out     `.length
+  console.log(`|---------------------------------------------------------+-------------------------------------------------------------------|`)
+  console.log(`| room_number |          name             |                check_in                  |                check_out               |`)
+  console.log(`|---------------------------------------------------------+-------------------------------------------------------------------|`)
+  let list = query.getAllBookings()           
     .then( items => {
       // console.log(items)
       items.map( item => {
@@ -128,9 +159,10 @@ switch (func) {
     break;
   case "available": getAvailableRooms()
     break;
-  case "bookedRooms": getAllBookedRooms(argument)
+  case "bookedRooms": getAllBookingPerRoom(argument)
     break;
-  // case ""
+  case "bookings": getAllBookings()
+    break;
   default:
 
 }

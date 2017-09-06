@@ -52,7 +52,11 @@ const query = {
   },
   getAllBookings(){
     let bookings = db.any(`     
-      SELECT *  FROM bookings 
+      SELECT r.room_number, g.name, b.check_in,b.check_out  FROM bookings AS b
+      JOIN rooms as r
+      ON b.room_id = r.id
+      JOIN guests as g
+      ON b.guest_id = g.id
       `)
     // console.log('the UpcomingBookings', bookings)
     return bookings
