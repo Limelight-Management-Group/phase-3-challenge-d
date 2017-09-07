@@ -155,6 +155,12 @@ modalClose.addEventListener('click', ()=>{
   console.log('clicked')
   modal.classList.remove('modal-open')
   modalOverlay.classList.remove('hide-overlay')
+  let sum = '$' + 0
+// totalInModal.append(sum)  
+console.log('clicked')
+totalInModal.innerHTML = sum
+let shopCartRoomNumber = ' '
+let shopCartPrice = '$' + 0
   
 })
 
@@ -163,8 +169,11 @@ let sum = '$' + 0
 // totalInModal.append(sum)  
 console.log('clicked')
 totalInModal.innerHTML = sum
-  modal.classList.remove('modal-open')
-  modalOverlay.classList.remove('hide-overlay')
+roomRateInModal.innerText = ' '
+roomNumberInModal.innerHTML = '$' + 0 + '/' +'Per night'
+// console.log(shopCartPrice, shopCartRoomNumber)
+  // modal.classList.remove('modal-open')
+  // modalOverlay.classList.remove('hide-overlay')
 
 })
 
@@ -173,4 +182,6 @@ updateButton.addEventListener('click', ()=>{
   let sum = rateTotal * daysStayedDropdown.value
   console.log(sum,'<----------this is the totalSum')
   totalInModal.innerHTML = sum
+  roomRateInModal.innerHTML = rateTotal + '/' + 'a night'
+  roomNumberInModal.innerHTML = shopCartRoomNumber[0]
 })

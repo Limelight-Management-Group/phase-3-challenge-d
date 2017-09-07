@@ -39,6 +39,7 @@ const query = {
       JOIN guests as g
       ON b.guest_id = g.id
       WHERE room_number = $1
+      ORDER BY check_in ASC 
       `,[room_number])
       // console.log('this is the bookingByRoomId', bookingByRoomId)
       return bookingByRoomId
@@ -57,6 +58,7 @@ const query = {
       ON b.room_id = r.id
       JOIN guests as g
       ON b.guest_id = g.id
+      ORDER BY check_in ASC
       `)
     // console.log('the UpcomingBookings', bookings)
     return bookings
